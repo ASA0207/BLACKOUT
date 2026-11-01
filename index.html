@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLACKOUT OFFICIAL</title>
+  <meta name="description" content="BLACKOUT OFFICIAL - Your Game, Your Night." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="vignette"></div>
+  <canvas id="embers"></canvas>
+  <div class="hell-aura"></div><div class="scanlines" aria-hidden="true"></div><div id="cursorGlow" class="cursor-glow" aria-hidden="true"></div>
+
+  <div class="intro-screen" id="introScreen" aria-hidden="false">
+    <div class="intro-card">
+      <div class="intro-mark">⛧</div><div class="entry-halo" aria-hidden="true"></div>
+      <p class="overline">BLACKOUT OFFICIAL</p>
+      <h1>ENTER BLACKOUT</h1>
+      <p class="intro-copy">
+        붉은 밤 아래, 게임과 대화가 뒤섞이는 어두운 공간.
+        <br />WELCOME IN. YOUR GAME, YOUR NIGHT.
+      </p>
+      <div class="intro-actions">
+        <button id="enterBtn" class="btn btn-primary">ENTER WITH RAVE</button>
+        <button id="ambientBtn" class="btn btn-secondary">SILENT ENTRY</button>
+      </div>
+      <p class="entry-audio-note">RAVE · DXRK ダーク · 볼륨 23% · 음악은 입장 버튼을 누르면 시작됩니다.</p><p class="intro-hint">어둠 속에 숨겨진 비밀을 찾고 싶다면 키보드로 <strong>blackout</strong> 을 입력해 보세요.</p>
+    </div>
+  </div>
+
+  <div class="flash-overlay" id="flashOverlay" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="brand-block">
+      <span class="brand-icon">⛓️</span>
+      <div>
+        <p class="brand-kicker">BLACKOUT OFFICIAL</p>
+        <h1>YOUR GAME, YOUR NIGHT.</h1>
+      </div>
+    </div>
+    <nav class="top-nav">
+      <a href="#about">About</a>
+      <a href="#rules">Rules</a>
+      <a href="#guide">Guide</a>
+      <a href="#message">Message</a>
+      <a href="https://discord.gg/jGuxkSbkNn" id="joinLinkTop" target="_blank" rel="noopener">Join</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section">
+      <div class="hero-text">
+        <p class="section-label">WELCOME TO BLACKOUT</p>
+        <h2>다크하고 힙한 밤의 서버.<br />게임도, 분위기도, 존재감도 깊게.</h2>
+        <p class="lead">
+          BLACKOUT는 단순한 대화방이 아니라 공지, 이벤트, 내전, 게임 채널,
+          자유로운 소통이 하나의 느와르 무드로 연결되는 공간입니다.
+          검은 공기와 붉은 빛, 그리고 다시 들어오고 싶어지는 분위기를 담았습니다.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="https://discord.gg/jGuxkSbkNn" id="joinLinkHero" target="_blank" rel="noopener">JOIN BLACKOUT</a>
+          <button class="btn btn-secondary" id="focusRulesBtn">CODE OF CONDUCT</button>
+        </div>
+        <div class="hero-tags">
+          <span>공지 확인</span>
+          <span>이벤트 / 내전 일정</span>
+          <span>게임 채널</span>
+          <span>다크 느와르 무드</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="blood-moon"></div>
+        <div class="sigil-ring ring-1"></div>
+        <div class="sigil-ring ring-2"></div>
+        <div class="sigil-core">
+          <span>BLACKOUT</span>
+          <small>OFFICIAL</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section grid-two" id="about">
+      <article class="panel panel-glow">
+        <p class="section-label">NOTICE</p>
+        <h3>WELCOME TO BLACKOUT</h3>
+        <p>
+          BLACKOUT에 오신 것을 환영합니다. 이곳은 게임과 소통을 함께 즐기는 공간입니다.
+          서버의 새로운 소식과 중요한 안내를 전달하며, 이벤트 및 내전 일정을 확인할 수 있습니다.
+          모두가 즐겁게 머물 수 있는 공간을 함께 만들어가요.
+        </p>
+      </article>
+      <article class="panel infernal-panel">
+        <p class="section-label">ATMOSPHERE</p>
+        <h3>Dark · Devilish · Hip · Noir</h3>
+        <ul class="feature-list">
+          <li>붉은 달빛과 검은 안개를 섞은 악마적인 비주얼</li>
+          <li>차갑고 힙한 느와르 감성의 타이포그래피</li>
+          <li>화려한 비밀 이스터에그와 화면 전환 효과</li>
+          <li>GitHub Pages에 바로 올릴 수 있는 정적 사이트</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section" id="rules">
+      <div class="section-head">
+        <div>
+          <p class="section-label">CODE OF CONDUCT</p>
+          <h3>서버 규칙</h3>
+        </div>
+        <div class="rules-tools">
+          <input id="ruleSearch" type="text" placeholder="규칙 검색하기" aria-label="규칙 검색" />
+          <button class="btn btn-secondary small" id="expandAllBtn">모두 펼치기</button>
+        </div>
+      </div>
+
+      <div class="rule-grid" id="ruleGrid">
+        <details class="rule-card" open>
+          <summary><span>01</span>서로에 대한 존중</summary>
+          <p>나이, 성별, 실력 등을 이유로 다른 멤버를 무시하거나 깎아내리는 행동은 허용하지 않습니다.</p>
+        </details>
+        <details class="rule-card">
+          <summary><span>02</span>대화 방식</summary>
+          <p>서버 내 반말은 자유롭게 사용할 수 있습니다. 다만 반말이 불편한 분이 있다면 서로 배려하여 존댓말을 편하게 사용해 주세요. 말투를 강요하지 않습니다.</p>
+        </details>
+        <details class="rule-card">
+          <summary><span>03</span>불필요한 갈등</summary>
+          <p>개인적인 감정싸움이나 공개적인 저격, 편 가르기로 서버 분위기를 흐리지 말아 주세요.</p>
+        </details>
+        <details class="rule-card">
+          <summary><span>04</span>채널 이용</summary>
+          <p>각 채널은 정해진 용도에 맞게 사용해 주세요. 반복적인 도배나 무분별한 메시지는 자제해 주세요.</p>
+        </details>
+        <details class="rule-card">
+          <summary><span>05</span>음성 채널</summary>
+          <p>다른 사람의 플레이와 대화를 방해하는 행위, 고의적인 소음 및 불쾌감을 주는 행동은 제한됩니다.</p>
+        </details>
+        <details class="rule-card">
+          <summary><span>06</span>개인정보 보호</summary>
+          <p>개인 연락처, 사진, 대화 내용 등 타인의 사적인 정보를 동의 없이 외부에 공유하지 마세요.</p>
+        </details>
+        <details class="rule-card">
+          <summary><span>07</span>홍보 및 외부 활동</summary>
+          <p>운영진의 허가 없는 개인 홍보, 타 서버 초대 및 광고성 활동은 금지합니다.</p>
+        </details>
+        <details class="rule-card">
+          <summary><span>08</span>게임 매너</summary>
+          <p>게임 실력이나 결과를 이유로 비난하지 말아 주세요. 승패보다 함께 즐기는 것을 우선으로 합니다.</p>
+        </details>
+        <details class="rule-card">
+          <summary><span>09</span>운영진 안내</summary>
+          <p>서버 운영과 관련된 안내 및 조치에는 협조해 주세요. 문제가 있다면 운영진에게 별도로 전달해 주세요.</p>
+        </details>
+        <details class="rule-card">
+          <summary><span>10</span>이용 제한</summary>
+          <p>규칙 위반의 정도와 반복 여부에 따라 안내, 경고, 채널 이용 제한 또는 서버 퇴장 조치가 적용될 수 있습니다.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="guide">
+      <div class="section-head">
+        <div>
+          <p class="section-label">ENTER BLACKOUT</p>
+          <h3>처음 방문했다면 이렇게 시작하세요</h3>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item"><span>1</span><div><h4>서버 공지 및 이용 규칙 확인</h4><p>BLACKOUT의 분위기와 운영 기준을 먼저 확인해 주세요.</p></div></div>
+        <div class="timeline-item"><span>2</span><div><h4>자기소개 작성</h4><p>간단한 소개만으로도 훨씬 편하게 대화를 시작할 수 있습니다.</p></div></div>
+        <div class="timeline-item"><span>3</span><div><h4>원하는 역할 선택</h4><p>관심사와 플레이 성향에 맞는 역할을 선택해 활동 범위를 넓혀 보세요.</p></div></div>
+        <div class="timeline-item"><span>4</span><div><h4>관심 있는 게임 채널 입장</h4><p>자신이 즐기는 게임의 채널로 들어가 같은 취향의 멤버를 만나세요.</p></div></div>
+        <div class="timeline-item"><span>5</span><div><h4>자유롭게 대화하고 함께 플레이하기</h4><p>다른 멤버들과 함께 사용하는 공간인 만큼 배려를 잊지 말아 주세요.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section grid-two" id="message">
+      <article class="panel panel-quote">
+        <p class="section-label">BLACKOUT MESSAGE</p>
+        <blockquote>
+          서로에게 불편한 존재가 아닌,<br />다시 찾아오고 싶은 사람들이 되어주세요.
+        </blockquote>
+        <p>이 공간의 분위기는 우리 모두가 만들어갑니다.</p>
+      </article>
+      <article class="panel panel-cta infernal-panel">
+        <p class="section-label">WELCOME IN</p>
+        <h3>BLACKOUT에 입장할 준비가 되었나요?</h3>
+        <p>공지 확인, 자기소개, 역할 선택, 게임 채널 입장까지. 이제 당신의 밤을 시작해 보세요.</p>
+        <div class="stack-actions">
+          <a class="btn btn-primary" href="https://discord.gg/jGuxkSbkNn" id="joinLinkBottom" target="_blank" rel="noopener">JOIN DISCORD</a>
+          <button class="btn btn-secondary" id="backTopBtn">BACK TO TOP</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div class="secret-modal" id="secretModal" aria-hidden="true">
+    <div class="secret-burst"></div>
+    <div class="secret-core">
+      <span class="secret-icon">⛧</span>
+      <p class="section-label">HIDDEN RITUAL</p>
+      <h3>BLACKOUT AWAKENED</h3>
+      <p>봉인된 붉은 문이 열렸습니다. 검은 밤이 각성했고, 서버는 이제 더 짙은 분위기로 변합니다.</p>
+      <div class="secret-runes">
+        <span>⸸</span><span>✦</span><span>⛧</span><span>✦</span><span>⸸</span>
+      </div>
+      <button class="btn btn-primary" id="closeSecretBtn">CLOSE THE RIFT</button>
+    </div>
+  </div>
+
+  <div class="music-console" id="musicConsole" aria-label="배경음악 플레이어">
+  <div class="music-disc" id="musicDisc">⛧</div>
+  <div class="music-copy"><strong>RAVE</strong><span>DXRK ダーク · NOW PLAYING</span></div>
+  <div class="eq" id="eqBars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <button id="playToggle" class="music-btn" aria-label="음악 재생">▶</button>
+  <button id="muteToggle" class="music-btn" aria-label="음소거">♫</button>
+  <input type="range" id="volumeSlider" aria-label="음량" min="0" max="100" value="23" />
+  <span id="volumeLabel">23%</span>
+</div>
+<audio id="bgMusic" src="assets/rave.mp3" loop preload="metadata"></audio>
+<button id="scrollTopFab" class="scroll-top-fab" aria-label="맨 위로 이동">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
