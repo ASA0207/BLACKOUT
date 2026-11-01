@@ -17,6 +17,7 @@
   <div class="hell-aura"></div><div class="scanlines" aria-hidden="true"></div><div id="cursorGlow" class="cursor-glow" aria-hidden="true"></div>
 
   <div class="intro-screen" id="introScreen" aria-hidden="false">
+    <div class="portal-assembly" aria-hidden="true"><div class="portal-rune outer"></div><div class="portal-rune inner"></div><div class="portal-core">⛧</div></div>
     <div class="intro-card">
       <div class="intro-mark">⛧</div><div class="entry-halo" aria-hidden="true"></div>
       <p class="overline">BLACKOUT OFFICIAL</p>
@@ -25,7 +26,7 @@
         붉은 밤 아래, 게임과 대화가 뒤섞이는 어두운 공간.
         <br />WELCOME IN. YOUR GAME, YOUR NIGHT.
       </p>
-      <div class="intro-actions">
+      <div class="intro-actions" role="group" aria-label="입장 방식 선택">
         <button id="enterBtn" class="btn btn-primary">ENTER WITH RAVE</button>
         <button id="ambientBtn" class="btn btn-secondary">SILENT ENTRY</button>
       </div>
@@ -47,6 +48,8 @@
       <a href="#about">About</a>
       <a href="#rules">Rules</a>
       <a href="#guide">Guide</a>
+      <a href="#experience">Experience</a>
+      <a href="#faq">FAQ</a>
       <a href="#message">Message</a>
       <a href="https://discord.gg/jGuxkSbkNn" id="joinLinkTop" target="_blank" rel="noopener">Join</a>
     </nav>
@@ -177,6 +180,26 @@
         <div class="timeline-item"><span>5</span><div><h4>자유롭게 대화하고 함께 플레이하기</h4><p>다른 멤버들과 함께 사용하는 공간인 만큼 배려를 잊지 말아 주세요.</p></div></div>
       </div>
     </section>
+
+
+    <section class="section premium-section" id="experience">
+      <div class="chapter-head"><span>CHAPTER II — THE EXPERIENCE</span><h3>THE NIGHT IS YOURS.</h3><p>밤이 깊어질수록 새로운 이야기가 시작돼. 게임, 소통, 그리고 함께 만들어가는 BLACKOUT의 순간들.</p></div>
+      <div class="experience-grid">
+        <article class="experience-card"><div class="experience-symbol">⚔</div><span>01 / PLAY</span><h4>GAME TOGETHER</h4><p>혼자보다 함께할 때 더 즐거운 게임. 관심 있는 게임 채널을 찾아 팀원을 만나봐.</p></article>
+        <article class="experience-card"><div class="experience-symbol">◈</div><span>02 / CONNECT</span><h4>STAY CONNECTED</h4><p>반말도 존댓말도 자유롭게. 서로의 방식과 속도를 존중하며 편하게 소통하는 공간.</p></article>
+        <article class="experience-card"><div class="experience-symbol">⛓</div><span>03 / EVENTS</span><h4>EVENTS & MATCHES</h4><p>새로운 공지, 이벤트 및 내전 일정은 서버 공지에서 확인하고 원하는 순간에 참여해.</p></article>
+      </div>
+    </section>
+    <section class="section statement-section" id="manifesto"><div class="statement-ornament">⛧</div><span class="section-label">THE BLACKOUT MANIFESTO</span><h3>NO EGO. NO DRAMA.<br><em>JUST THE NIGHT.</em></h3><p>승패보다 함께하는 시간을, 소음보다 대화를, 배제보다 존중을. BLACKOUT의 분위기는 멤버 한 사람 한 사람이 만들어갑니다.</p><a href="#rules" class="text-link">우리의 규칙 확인하기 ↗</a></section>
+    <section class="section" id="moments"><div class="chapter-head"><span>CHAPTER III — NIGHT OPERATIONS</span><h3>CHOOSE YOUR PATH.</h3><p>어디에서 시작할지 고민된다면, 지금 끌리는 분위기를 선택해 봐.</p></div><div class="path-grid">
+      <button class="path-card" data-path="GAME NIGHT"><span>01</span><strong>GAME NIGHT</strong><small>게임 채널에서 함께 플레이</small><b>EXPLORE ↗</b></button>
+      <button class="path-card" data-path="SOCIAL LOUNGE"><span>02</span><strong>SOCIAL LOUNGE</strong><small>부담 없는 대화와 새로운 만남</small><b>EXPLORE ↗</b></button>
+      <button class="path-card" data-path="EVENT ARENA"><span>03</span><strong>EVENT ARENA</strong><small>이벤트와 내전 일정 확인</small><b>EXPLORE ↗</b></button>
+    </div><div id="pathDetail" class="path-detail" role="status">원하는 활동을 선택해 자세한 안내를 확인하세요.</div></section>
+    <section class="section faq-section" id="faq"><div class="chapter-head"><span>CHAPTER IV — BEFORE YOU ENTER</span><h3>FREQUENT QUESTIONS.</h3><p>첫 방문 전에 궁금할 만한 내용들을 모았어.</p></div>
+      <div class="faq-grid"><details><summary>반말을 사용해도 되나요?</summary><p>서버 내 반말은 자유롭게 사용할 수 있습니다. 다만 존댓말을 선호하는 멤버를 존중해 주세요.</p></details><details><summary>처음 들어가면 무엇부터 하나요?</summary><p>공지 및 규칙 확인 → 자기소개 → 원하는 역할 선택 → 게임 채널 입장 순서로 이용해 주세요.</p></details><details><summary>게임을 잘 못해도 괜찮나요?</summary><p>네. 실력이나 결과로 타인을 비난하지 않으며 함께 즐기는 것을 우선합니다.</p></details><details><summary>이벤트와 내전 일정은 어디서 확인하나요?</summary><p>BLACKOUT 디스코드 서버의 공지와 안내에서 확인할 수 있습니다.</p></details><details><summary>불편한 일이 생기면 어떻게 하나요?</summary><p>공개적인 저격이나 갈등을 피하고 운영진에게 별도로 전달해 주세요.</p></details><details><summary>다른 서버나 개인 채널 홍보가 가능한가요?</summary><p>운영진의 허가 없는 개인 홍보, 타 서버 초대 및 광고성 활동은 금지합니다.</p></details></div>
+    </section>
+    <section class="section final-gate"><div class="gate-ornament">⛓</div><span class="section-label">THE FINAL GATE</span><h3>THE NIGHT IS CALLING.</h3><p>당신의 게임, 당신의 밤. BLACKOUT에서 만나.</p><a class="btn btn-primary" href="https://discord.gg/jGuxkSbkNn" target="_blank" rel="noopener noreferrer">ENTER DISCORD ↗</a></section>
 
     <section class="section grid-two" id="message">
       <article class="panel panel-quote">

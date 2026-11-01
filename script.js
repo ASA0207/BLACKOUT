@@ -27,11 +27,22 @@ function flash() {
   setTimeout(() => flashOverlay.classList.remove('active'), 900);
 }
 
+let entering = false;
 function enterSite(withEffect = true) {
+  if (entering) return;
+  entering = true;
+  enterBtn.disabled = true;
+  ambientBtn.disabled = true;
+  introScreen.classList.add('portal-opening');
   if (withEffect) flash();
-  introScreen.classList.add('hidden');
-  introScreen.setAttribute('aria-hidden', 'true');
-  document.body.classList.remove('lock-scroll');
+  const finish = () => {
+    introScreen.classList.add('hidden');
+    introScreen.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lock-scroll');
+    document.getElementById('top')?.scrollIntoView({block:'start'});
+  };
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) finish();
+  else setTimeout(finish, 1650);
 }
 
 const bgMusic = document.getElementById('bgMusic');
@@ -187,3 +198,20 @@ window.addEventListener('resize', () => {
   resizeCanvas();
   initParticles();
 });
+
+// Interactive night paths
+const pathMessages={
+ 'GAME NIGHT':'⚔ GAME NIGHT — 관심 있는 게임 채널에 입장해 함께 플레이할 멤버를 찾아보세요. 실력보다는 함께 즐기는 마음이 중요합니다.',
+ 'SOCIAL LOUNGE':'◈ SOCIAL LOUNGE — 자기소개 이후 자유롭게 이야기해 보세요. 반말과 존댓말은 서로의 선호를 존중해 주세요.',
+ 'EVENT ARENA':'⛓ EVENT ARENA — 이벤트·내전 일정 및 중요한 안내는 디스코드 서버 공지에서 확인할 수 있습니다.'
+};
+document.querySelectorAll('[data-path]').forEach(button => button.addEventListener('click',()=>{
+ document.querySelectorAll('[data-path]').forEach(el=>el.setAttribute('aria-pressed','false'));
+ button.setAttribute('aria-pressed','true');
+ document.getElementById('pathDetail').textContent=pathMessages[button.dataset.path];
+}));
+// Reveal individual new sections upon scroll; progressive enhancement only.
+if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+ const ob=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-revealed');ob.unobserve(entry.target);}})},{threshold:.08});
+ document.querySelectorAll('.experience-card,.path-card,.faq-grid details').forEach(el=>{el.classList.add('reveal-ready');ob.observe(el)});
+}
